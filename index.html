@@ -300,6 +300,9 @@ html{overflow-x:hidden}
 .tg h3{font:900 clamp(22px,2.8vw,34px)/1 var(--f-display);text-transform:uppercase;max-width:24ch}
 
 /* ---------- заявка ---------- */
+.apply-card{display:flex;flex-direction:column;align-items:flex-start;gap:22px;font:500 clamp(18px,1.6vw,22px)/1.45 var(--f-body)}
+.apply-card .apply-note{font-size:14px;line-height:1.5;opacity:.75}
+.apply-card .apply-note a{color:inherit}
 .apply-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(24px,5vw,72px);align-items:start}
 .form{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .form label{display:flex;flex-direction:column;gap:7px;font:700 15px/1 var(--f-cap);text-transform:uppercase;letter-spacing:.06em;min-width:0}
@@ -609,19 +612,11 @@ html{overflow-x:hidden}
 <section class="sec dark" id="apply">
   <div class="wrap apply-grid">
     <h2 class="h"><span>Твой вуз</span><span class="c blur-in">в лиге?</span></h2>
-    <form class="form" id="apply-form" novalidate>
-      <label for="f-role">Кто ты<select id="f-role" name="role"><option selected>Студент, хочу играть</option><option>Капитан или спортклуб</option><option>Партнёр</option></select></label>
-      <label for="f-uni">Вуз<input id="f-uni" name="uni" placeholder="РГГУ" maxlength="120"></label>
-      <label for="f-name">Имя<input id="f-name" name="name" placeholder="Анна" required maxlength="120" autocomplete="given-name"></label>
-      <label for="f-contact">Telegram<input id="f-contact" name="contact" placeholder="@anna_tennis" required maxlength="64"></label>
-      <label class="hp" aria-hidden="true">Сайт<input name="website" tabindex="-1" autocomplete="off"></label>
-      <input type="hidden" name="form" value="liga"><input type="hidden" name="consent_v" value="liga-v1 от 15.11.2026">
-      <label class="full agree" for="f-agree"><input type="checkbox" id="f-agree" name="consent" value="1"><span>Мне есть 18 лет. Даю согласие на обработку моих имени, вуза и аккаунта в Telegram для связи по моей заявке в лигу. Условия в <a href="soglasie.html" target="_blank" rel="noopener">согласии</a> и <a href="politika.html" target="_blank" rel="noopener">политике обработки персональных данных</a>.</span></label>
-      <div class="full send">
-        <button class="btn" type="submit">Отправить</button>
-        <span class="msg" id="f-msg" role="status">Макет: никуда не отправляется.</span>
-      </div>
-    </form>
+    <div class="apply-card">
+      <p>Оставь заявку: имя, вуз и ник в Telegram. Это займёт минуту, а мы напишем тебе сами.</p>
+      <a class="btn" href="https://forms.yandex.ru/u/6afeedaaaeb3525e8273b04d/" target="_blank" rel="noopener">Оставить заявку</a>
+      <p class="apply-note">Форма откроется в Яндекс Формах. Заявку могут оставить только те, кому есть 18 лет. Условия в <a href="soglasie.html" target="_blank" rel="noopener">согласии</a> и <a href="politika.html" target="_blank" rel="noopener">политике обработки персональных данных</a>.</p>
+    </div>
   </div>
 </section>
 
@@ -763,22 +758,6 @@ html{overflow-x:hidden}
   if (ckGet() === 'yes') loadYM(); else if (!ckGet()) ckBanner();
   $('#ck-open').addEventListener('click', ckBanner);
 
-  /* заявка. ENDPOINT пустой = макет, ничего не отправляется. Перед публикацией вставить ссылку функции Яндекс Облака
-     (zayavki/yandex-cloud, версия с лигой). Без галочки не уходит ни из браузера, ни на сервере. */
-  var ENDPOINT = '';
-  var form = $('#apply-form'), msg = $('#f-msg');
-  function say(t, err){ msg.textContent = ''; msg.classList.toggle('err', !!err); msg.insertAdjacentHTML('beforeend', t); }
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    if (!$('#f-agree').checked) return say('Для заявки нужно отдельное согласие. Или напиши нам: <a href="mailto:tennis_company@bk.ru">tennis_company@bk.ru</a>.', true);
-    if (!$('#f-name').value.trim() || $('#f-contact').value.trim().length < 3) return say('Укажи имя и Telegram, чтобы мы могли ответить.', true);
-    if (!ENDPOINT) return say('Принято. В макете ничего не отправляется.');
-    var d = new URLSearchParams(new FormData(form)); d.set('role', $('#f-role').value); d.set('page', location.href);
-    say('Отправляем…');
-    fetch(ENDPOINT, {method: 'POST', body: d}).then(function(r){
-      if (!r.ok) throw 0; form.reset(); say('Заявка принята. Напишем в Telegram.');
-    }).catch(function(){ say('Не отправилось. Напиши нам: <a href="mailto:tennis_company@bk.ru">tennis_company@bk.ru</a>.', true); });
-  });
 })();
 </script>
 
