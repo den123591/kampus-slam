@@ -1,4 +1,33 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}
+/* основная лига: регламент и пример */
+.reg{max-width:860px;margin-top:clamp(20px,3vw,32px);font:500 clamp(19px,1.8vw,24px)/1.4 var(--f-body);color:var(--ink)}
+.reg b{color:var(--red)}
+.ex{display:grid;grid-template-columns:1fr 1.15fr;gap:22px;margin-top:clamp(24px,3.5vw,40px)}
+.ex-card{position:relative;border-radius:var(--r);padding:26px 24px 24px;background:linear-gradient(160deg,#C52A33 0%,var(--red) 55%,#8E1820 100%);color:#fff;box-shadow:inset 0 2px 0 rgba(255,255,255,.18),inset 0 -4px 0 rgba(0,0,0,.18),8px 8px 0 var(--ink)}
+.ex-table{background:var(--ink)}
+.ex-tag{display:inline-block;font:700 14px/1 var(--f-cap);letter-spacing:1.5px;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:7px 10px;border-radius:4px;margin-bottom:16px}
+.ex-table .ex-tag{background:var(--red)}
+.ex-head,.ex-row{display:grid;grid-template-columns:1fr 70px 24px 70px;align-items:center}
+.ex-head{font:700 15px/1 var(--f-cap);letter-spacing:1.5px;text-transform:uppercase;color:var(--ink);padding-bottom:8px}
+.ex-head span:first-child{grid-column:2;text-align:center}.ex-head span:nth-child(2){grid-column:3}.ex-head span:last-child{grid-column:4;text-align:center}
+.ex-row{padding:12px 0;border-top:2px solid rgba(0,0,0,.18)}
+.ex-l{font:900 clamp(20px,2vw,26px)/1 var(--f-display);text-transform:uppercase}
+.ex-row b{font:900 clamp(30px,3vw,42px)/1 var(--f-display);text-align:center}
+.ex-row i{font-style:normal;text-align:center;font:900 28px/1 var(--f-display);color:var(--ink)}
+.ex-sum{border-top:3px solid var(--ink)}
+.ex-sum .ex-l,.ex-sum b{color:var(--ink)}
+.ex-res{margin-top:14px;font:500 17px/1.4 var(--f-body);color:var(--ink)}
+.ex-table .ex-res{color:var(--paper)}
+.ex-table table{width:100%;border-collapse:collapse;font:500 17px/1 var(--f-body);color:var(--paper)}
+.ex-table th{font:700 13px/1 var(--f-cap);letter-spacing:1.3px;text-transform:uppercase;color:#B3AEA4;text-align:center;padding:0 6px 10px}
+.ex-table th:nth-child(2),.ex-table td:nth-child(2){text-align:left}
+.ex-table td{padding:10px 6px;text-align:center;border-top:1px solid rgba(255,255,255,.12)}
+.ex-table td:last-child{font:900 22px/1 var(--f-display)}
+.ex-table td:first-child{color:#B3AEA4;width:28px}
+.ex-table tr.po td:first-child{color:#fff;background:var(--red)}
+.po-key{display:inline-block;width:14px;height:14px;background:var(--red);border-radius:2px;margin-right:8px;vertical-align:-1px}
+@media (max-width:860px){.ex{grid-template-columns:1fr}}
+</style></head><body>
 <title>Кампус Слэм</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,900;1,900&family=IBM+Plex+Sans+Condensed:wght@500;700&family=IBM+Plex+Sans:wght@400;500&family=Rubik+Spray+Paint&display=swap">
