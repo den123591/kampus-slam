@@ -287,6 +287,11 @@ html{overflow-x:hidden}
 .partners{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:14px;margin-top:clamp(28px,4vw,44px)}
 .pt{display:flex;align-items:flex-end;min-height:130px;padding:16px;border:2px dashed rgba(29,29,27,.35);border-radius:var(--r);color:var(--muted)}
 .pt .cap{font-size:15px}
+.pt--on{flex-direction:column;align-items:flex-start;justify-content:flex-end;gap:6px;border:0;background:var(--ink);color:var(--paper)}
+.pt--on .cap{color:#B3AEA4}
+.pt--on b{font:900 clamp(20px,2vw,28px)/1 var(--f-display);text-transform:uppercase;color:#fff}
+.pt--on small{font:500 14px/1.3 var(--f-body);color:var(--paper)}
+.join--one{grid-template-columns:1fr;max-width:640px;margin-left:auto;margin-right:auto}
 .pitch{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;margin-top:26px}
 .pitch p{font:900 clamp(20px,2.4vw,28px)/1.05 var(--f-display);text-transform:uppercase;max-width:26ch}
 
@@ -421,6 +426,21 @@ html{overflow-x:hidden}
   </div>
 </div></div>
 
+<!-- ================= ДВА ФОРМАТА: ВЫБОР ================= -->
+<section class="sec" id="formats">
+  <div class="balls balls--free" aria-hidden="true">
+    <img class="ball" data-k=".01" src="img/myach-1.webp" alt="" style="--s0:150px;--s:calc(var(--s0) * var(--bk,1));--x:7%;--y:calc(30px * var(--bk,1))">
+    <img class="ball" data-k=".01" src="img/myach-3.webp" alt="" style="--s0:170px;--s:calc(var(--s0) * var(--bk,1));--x:calc(100% - 22%);--y:calc(10px * var(--bk,1))">
+  </div>
+  <div class="wrap">
+    <h2 class="h h--center"><span>Два</span><span class="c blur-in">формата</span></h2>
+    <div class="fmt-pick">
+      <a class="fp dark dark--or" href="#format"><span class="num">1</span><h3>Основная лига</h3><p>Сезон дома и в гостях, плей-офф и кубок. Обычный теннис, мужская и женская лига.</p><span class="btn btn--ink">Как устроена</span></a>
+      <a class="fp dark dark--or" href="#probny"><span class="num">2</span><h3>Пробный формат</h3><p>Быстрая встреча на час: 5 раундов по 10 минут, каждый розыгрыш — очко.</p><span class="btn btn--ink">Как играется</span></a>
+    </div>
+  </div>
+</section>
+
 <!-- ================= ФОРМАТ ================= -->
 <section class="sec format street dark" id="why">
   <div class="balls" aria-hidden="true">
@@ -433,25 +453,10 @@ html{overflow-x:hidden}
   <div class="wrap">
     <h2 class="h h--center"><span>Играешь</span><span class="c blur-in">за свой вуз</span></h2>
     <div class="glass-grid">
-      <div class="glass glass--w"><b>В команде</b><span class="cap">играешь вместе, а не один</span></div>
-      <div class="glass glass--w"><b>Все в игре</b><span class="cap">до 3 мужских и 3 женских команд от вуза. Команда — 2 парня или 2 девушки</span></div>
-      <div class="glass glass--w"><b>Общий счёт</b><span class="cap">очки парней и девушек складываются</span></div>
-      <div class="glass glass--w"><b>Кубок</b><span class="cap">в финале вручает Надежда Петрова</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= ДВА ФОРМАТА: ВЫБОР ================= -->
-<section class="sec" id="formats">
-  <div class="balls balls--free" aria-hidden="true">
-    <img class="ball" data-k=".01" src="img/myach-1.webp" alt="" style="--s0:150px;--s:calc(var(--s0) * var(--bk,1));--x:7%;--y:calc(30px * var(--bk,1))">
-    <img class="ball" data-k=".01" src="img/myach-3.webp" alt="" style="--s0:170px;--s:calc(var(--s0) * var(--bk,1));--x:calc(100% - 22%);--y:calc(10px * var(--bk,1))">
-  </div>
-  <div class="wrap">
-    <h2 class="h h--center"><span>Два</span><span class="c blur-in">формата</span></h2>
-    <div class="fmt-pick">
-      <a class="fp dark dark--or" href="#format"><span class="num">1</span><h3>Основная лига</h3><p>Сезон дома и в гостях, плей-офф и кубок. Обычный теннис, мужская и женская лига.</p><span class="btn btn--ink">Как устроена</span></a>
-      <a class="fp dark dark--or" href="#probny"><span class="num">2</span><h3>Пробный формат</h3><p>Быстрая встреча на час: 5 раундов по 10 минут, каждый розыгрыш — очко.</p><span class="btn btn--ink">Как играется</span></a>
+      <div class="glass"><b>2</b><span class="cap">игрока в команде: 2 парня или 2 девушки</span></div>
+      <div class="glass"><b>6</b><span class="cap">команд от вуза: 3 мужских и 3 женских</span></div>
+      <div class="glass"><b>2</b><span class="cap">игровых дня: день парней и день девушек</span></div>
+      <div class="glass"><b>1</b><span class="cap">общий счёт вуза</span></div>
     </div>
   </div>
 </section>
@@ -551,16 +556,11 @@ html{overflow-x:hidden}
       <div><b>2</b><span class="cap">лиги: мужская и женская</span></div>
       <div><b>1</b><span class="cap">кубок</span></div>
     </div>
-    <div class="join">
+    <div class="join join--one">
       <article class="jc dark dark--or">
         <h3>Ты студент</h3>
         <p>Оставь заявку и укажи вуз. Наберём двух парней и двух девушек — вуз в лиге.</p>
         <a class="btn btn--ink" href="#apply">Играть за свой вуз</a>
-      </article>
-      <article class="jc dark">
-        <h3>Ты спортклуб или капитан</h3>
-        <p>Заявите до трёх мужских и трёх женских команд. Формат, расписание и судейство — на нас, корт — по очереди.</p>
-        <a class="btn" href="#apply">Заявить вуз</a>
       </article>
     </div>
   </div>
@@ -589,8 +589,8 @@ html{overflow-x:hidden}
     <h2 class="h h--center"><span>Партнёры</span></h2>
     <p class="lead">Место для вашего логотипа на форме, корте и в каждом видео.</p>
     <div class="partners">
-      <div class="pt"><span class="cap">Генеральный партнёр</span></div>
-      <div class="pt"><span class="cap">Партнёр</span></div>
+      <div class="pt pt--on"><span class="cap">Генеральный партнёр</span><b>Анастасия Мыськина</b><small>чемпионка Roland Garros 2004</small></div>
+      <div class="pt pt--on"><span class="cap">Партнёр</span><b>Надежда Петрова</b><small>бывшая третья ракетка мира</small></div>
       <div class="pt"><span class="cap">Партнёр</span></div>
       <div class="pt"><span class="cap">Партнёр</span></div>
     </div>
