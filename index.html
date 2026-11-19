@@ -764,7 +764,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)})
     if ($('#ck')) return;
     var b = document.createElement('div'); b.id = 'ck'; b.className = 'ck'; b.setAttribute('role', 'dialog'); b.setAttribute('aria-label', 'Cookie');
     b.innerHTML = '<p>Разрешите статистику посещений через Яндекс Метрику или откажитесь. Сайт работает при любом выборе. <a href="politika.html#cookie" target="_blank" rel="noopener">Подробнее в политике</a></p>'
-      + '<div class="ck-btns"><button type="button" data-v="yes">Принять</button><button type="button" data-v="no">Отклонить</button></div>';
+      + '<div class="ck-btns"><button type="button" data-v="no">Отклонить</button><button type="button" data-v="yes">Принять</button></div>';
     b.addEventListener('click', function(e){
       var v = e.target.getAttribute('data-v'); if (!v) return;
       var was = ckGet(); ckPut(v); b.remove();
