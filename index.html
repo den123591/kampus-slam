@@ -129,6 +129,7 @@ button,input,select{font:inherit;color:inherit}
 .top nav a{font:700 16px/1 var(--f-cap);text-transform:uppercase;letter-spacing:.05em;text-decoration:none;padding:8px 0}
 .top nav a:hover{color:var(--or-text)}
 .top{position:relative;z-index:20}
+.nav-logo{display:none}
 .burger{display:none;width:44px;height:44px;border:0;background:none;padding:10px;cursor:pointer;flex:none;flex-direction:column;justify-content:space-between}
 .burger span{display:block;height:3px;border-radius:2px;background:var(--ink,#1d1d1b);transition:transform .25s,opacity .25s}
 .burger[aria-expanded=true] span:nth-child(1){transform:translateY(9.5px) rotate(45deg)}
@@ -359,6 +360,7 @@ html{overflow-x:hidden}
   .burger{display:flex}
   .top .wrap{gap:12px}
   .top nav.open{display:flex;flex-direction:column;gap:0;position:absolute;left:0;right:0;top:100%;background:var(--paper);padding:8px 16px 16px;box-shadow:0 16px 24px rgba(29,29,27,.14)}
+  .top nav.open .nav-logo{display:block;width:min(72vw,300px);margin:22px auto 6px}
   .top nav.open a{padding:14px 0;font-size:20px;border-bottom:1px solid rgba(29,29,27,.12)}
   .hero-grid{grid-template-columns:1fr;justify-items:center;text-align:center}
   .hero>.balls{display:none}
@@ -395,7 +397,7 @@ html{overflow-x:hidden}
 <header class="top" id="top">
   <div class="wrap">
     <a class="mark" href="#top"><i aria-hidden="true"></i><span data-brand>Кампус Слэм</span></a>
-    <nav id="topnav" aria-label="Разделы"><a href="#format">Основная лига</a><a href="#probny">Пробный формат</a><a href="#unis">Вузы</a><a href="#join">Набор</a><a href="#partners">Партнёрам</a></nav>
+    <nav id="topnav" aria-label="Разделы"><a href="#format">Основная лига</a><a href="#probny">Пробный формат</a><a href="#unis">Вузы</a><a href="#join">Набор</a><a href="#partners">Партнёрам</a><img class="nav-logo" src="img/logo-krasnyj.svg" alt="" aria-hidden="true"></nav>
     <a class="btn btn--small" href="#apply">Играть</a>
     <button class="burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="topnav"><span></span><span></span><span></span></button>
   </div>
