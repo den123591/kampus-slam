@@ -14,6 +14,7 @@
 .ex-l{font:900 clamp(20px,2vw,26px)/1 var(--f-display);text-transform:uppercase}
 .ex-row b{font:900 clamp(30px,3vw,42px)/1 var(--f-display);text-align:center}
 .ex-row i{font-style:normal;text-align:center;font:900 28px/1 var(--f-display);color:var(--ink)}
+.ex-sub{grid-column:1/-1;margin-top:8px;font:500 15px/1.35 var(--f-body);opacity:.9}
 .ex-sum{border-top:3px solid var(--ink)}
 .ex-sum .ex-l,.ex-sum b{color:var(--ink)}
 .ex-res{margin-top:14px;font:500 17px/1.4 var(--f-body);color:var(--ink)}
@@ -492,15 +493,15 @@ html{overflow-x:hidden}
   <div class="wrap">
     <div class="fmt-band"><span class="spray spray-tag">Формат 1</span><span class="cap">Основная лига · сезон, плей-офф, кубок</span></div>
     <h2 class="h"><span>Сезон</span><span class="c blur-in">и плей-офф</span></h2>
-    <p class="reg">По регламенту у встречи двух вузов <b>два игровых дня</b>: в один играют парни, в другой — девушки. Всё идёт в <b>один командный зачёт</b> вуза.</p>
+    <p class="reg">По регламенту у встречи двух вузов <b>два игровых дня</b>: в один играют парни, в другой — девушки. Каждый день команды вузов играют друг с другом: 1 с 1, 2 с 2, 3 с 3. Выиграл игру команд — <b>1 очко</b> вузу. За день можно взять до 3 очков, за встречу до 6. Всё идёт в <b>один командный зачёт</b> вуза.</p>
     <div class="ex">
       <div class="ex-card ex-match">
-        <span class="ex-tag">Пример встречи</span>
+        <span class="ex-tag">Пример встречи (цифры условные)</span>
         <div class="ex-head"><span>Вуз А</span><span></span><span>Вуз Б</span></div>
-        <div class="ex-row"><span class="ex-l">Парни</span><b>16</b><i>:</i><b>11</b></div>
-        <div class="ex-row"><span class="ex-l">Девушки</span><b>14</b><i>:</i><b>10</b></div>
-        <div class="ex-row ex-sum"><span class="ex-l">Командный зачёт</span><b>30</b><i>:</i><b>21</b></div>
-        <p class="ex-res">Вуз А побеждает — <b>+3 очка</b> в таблице. Ничья — решает микст.</p>
+        <div class="ex-row"><span class="ex-l">Парни</span><b>2</b><i>:</i><b>1</b><span class="ex-sub">Команды 1 и 2 — победа Вуза А, команды 3 — победа Вуза Б</span></div>
+        <div class="ex-row"><span class="ex-l">Девушки</span><b>3</b><i>:</i><b>0</b><span class="ex-sub">Все три игры команд — победа Вуза А</span></div>
+        <div class="ex-row ex-sum"><span class="ex-l">Командный зачёт</span><b>5</b><i>:</i><b>1</b></div>
+        <p class="ex-res">Вуз А побеждает — <b>+3 очка</b> в таблице. Поровну, 3:3 — решает микст.</p>
       </div>
       <div class="ex-card ex-table">
         <span class="ex-tag">Пример таблицы</span>
@@ -518,7 +519,7 @@ html{overflow-x:hidden}
         <p class="ex-res"><span class="po-key"></span>Первые четыре — в плей-офф и финал за кубок.</p>
       </div>
     </div>
-    <p class="note">Команда — 2 игрока, первая и вторая ракетка. Матч — 2 сета до 4 геймов, при 1:1 тай-брейк до 10. Победа — 3 очка в таблице, лучшие выходят в плей-офф.</p>
+    <p class="note">Команда — 2 игрока, первая и вторая ракетка. Игра команд — 2 одиночки крест-накрест; при 1:1 решает пара. Матч — 2 сета до 4 геймов, при 1:1 тай-брейк до 10. Победа — 3 очка в таблице, лучшие выходят в плей-офф.</p>
   </div>
 </section>
 
