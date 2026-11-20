@@ -163,6 +163,11 @@ html{overflow-x:hidden}
 @media (max-width:760px){.season.free-grid{grid-template-columns:1fr}}
 .wip{display:inline-block;padding:6px 12px;border-radius:4px;background:var(--ink);color:var(--paper);font:700 14px/1 var(--f-cap);text-transform:uppercase;letter-spacing:.08em;transform:rotate(-2deg)}
 .fmt-band .wip{background:var(--red)}
+.steps{counter-reset:st;display:grid;grid-template-columns:repeat(2,1fr);gap:14px 28px;max-width:1000px;margin-top:22px}
+.steps li{counter-increment:st;position:relative;padding:16px 0 0 58px;border-top:3px solid var(--ink);font:500 clamp(17px,1.4vw,19px)/1.45 var(--f-body)}
+.steps li::before{content:counter(st);position:absolute;left:0;top:10px;font:900 44px/1 var(--f-display);color:var(--red)}
+.steps b{display:block;font:900 22px/1.1 var(--f-display);text-transform:uppercase;margin-bottom:6px}
+@media (max-width:760px){.steps{grid-template-columns:1fr}}
 .support{display:block;margin-top:14px;padding-top:12px;border-top:2px solid var(--red);color:var(--ink);font-size:.9em}
 .logo-zone{position:relative;padding:clamp(64px,8vw,104px) clamp(10px,3vw,40px)}
 .logo-zone .ball{display:none} /* красные мячи сливались с красным логотипом */
@@ -464,8 +469,8 @@ html{overflow-x:hidden}
 
 <div class="tape-wrap"><div class="ticker tape" aria-hidden="true">
   <div class="ticker-track">
-    <span>вуз против вуза</span><span>3 парня + 3 девушки</span><span>9 матчей по 25 минут</span><span>все геймы в счёт вуза</span><span>участие бесплатно</span><span>плей-офф и кубок</span><span>старт 25 января 2027</span>
-    <span>вуз против вуза</span><span>3 парня + 3 девушки</span><span>9 матчей по 25 минут</span><span>все геймы в счёт вуза</span><span>участие бесплатно</span><span>плей-офф и кубок</span><span>старт 25 января 2027</span>
+    <span>вуз против вуза</span><span>3 парня + 3 девушки</span><span>6 одиночек + 3 пары по 25 минут</span><span>все геймы в счёт вуза</span><span>участие бесплатно</span><span>плей-офф и кубок</span><span>старт 25 января 2027</span>
+    <span>вуз против вуза</span><span>3 парня + 3 девушки</span><span>6 одиночек + 3 пары по 25 минут</span><span>все геймы в счёт вуза</span><span>участие бесплатно</span><span>плей-офф и кубок</span><span>старт 25 января 2027</span>
   </div>
 </div></div>
 
@@ -479,7 +484,7 @@ html{overflow-x:hidden}
   <div class="wrap">
     <h2 class="h h--center"><span>Два</span><span class="c blur-in">формата</span></h2>
     <div class="fmt-pick">
-      <a class="fp dark dark--or" href="#format"><span class="num">1</span><h3>Основная лига</h3><p>Сезон, плей-офф и кубок. Команда вуза — 3 парня и 3 девушки, встреча — 9 матчей по 25 минут.</p><span class="btn btn--ink">Как устроена</span></a>
+      <a class="fp dark dark--or" href="#format"><span class="num">1</span><h3>Основная лига</h3><p>Сезон, плей-офф и кубок. Команда вуза — 3 парня и 3 девушки, встреча — 6 одиночек и 3 пары, каждая игра по 25 минут.</p><span class="btn btn--ink">Как устроена</span></a>
       <a class="fp dark dark--or" href="#probny"><span class="num">2</span><span class="wip">В разработке</span><h3>Пробный формат</h3><p>Быстрая встреча на час: 5 раундов по 10 минут. Его пока нет — может появиться позже.</p><span class="btn btn--ink">Как играется</span></a>
     </div>
   </div>
@@ -499,7 +504,7 @@ html{overflow-x:hidden}
     <div class="glass-grid">
       <div class="glass"><b>3</b><span class="cap">парня в команде вуза</span></div>
       <div class="glass"><b>3</b><span class="cap">девушки в команде вуза</span></div>
-      <div class="glass"><b>9</b><span class="cap">матчей по 25 минут за встречу</span></div>
+      <div class="glass"><b>9</b><span class="cap">игр за встречу: 6 одиночек и 3 пары по 25 минут</span></div>
       <div class="glass"><b>1</b><span class="cap">общий счёт: все геймы идут вузу</span></div>
     </div>
   </div>
@@ -528,7 +533,13 @@ html{overflow-x:hidden}
   <div class="wrap">
     <div class="fmt-band"><span class="spray spray-tag">Формат 1</span><span class="cap">Основная лига · сезон, плей-офф, кубок</span></div>
     <h2 class="h"><span>Сезон</span><span class="c blur-in">и плей-офф</span></h2>
-    <p class="reg">Команда вуза — <b>3 парня и 3 девушки</b>. Встреча двух вузов — <b>9 матчей по 25 минут</b>: сначала 6 одиночек (парни с парнями, девушки с девушками), потом мужская пара, женская пара и микст. Играются обычные геймы, без сетов. Все выигранные геймы идут в <b>общий счёт вуза</b>.</p>
+    <p class="reg">Каждый вуз приводит команду: <b>3 парня и 3 девушки</b>. Вот как проходит встреча двух вузов:</p>
+    <ol class="steps">
+      <li><b>Одиночки.</b> Каждый игрок играет одну одиночную игру против игрока другого вуза: 3 парня против 3 парней, 3 девушки против 3 девушек. Получается 6 игр.</li>
+      <li><b>Пары.</b> Потом 3 парные игры: два парня против двух парней, две девушки против двух девушек и микст (оставшиеся парень и девушка).</li>
+      <li><b>Время, а не сеты.</b> Каждая игра идёт 25 минут по таймеру. Играете обычные геймы, сколько успеете. Прозвучал таймер посреди гейма — гейм доигрываете.</li>
+      <li><b>Счёт.</b> Каждый выигранный гейм приносит вузу 1 очко во встрече. После всех 9 игр геймы складываются: у кого больше, тот выиграл встречу.</li>
+    </ol>
     <div class="ex">
       <div class="ex-card ex-match">
         <span class="ex-tag">Пример встречи (цифры условные)</span>
@@ -555,7 +566,7 @@ html{overflow-x:hidden}
         <p class="ex-res"><span class="po-key"></span>Первые четыре — в плей-офф и финал за кубок. Очков поровну — выше тот, у кого больше разница геймов.</p>
       </div>
     </div>
-    <p class="note">Каждый матч — 25 минут по таймеру; если время вышло посреди гейма, гейм доигрывают. Кто с кем играет, решает тренер или капитан. Победа — 3 очка, ничья — 1, поражение — 0. Встречи — на кортах «Спартака» в Сокольниках.</p>
+    <p class="note">Кто с кем играет, решает тренер или капитан. Победа — 3 очка, ничья — 1, поражение — 0. Встречи — на кортах «Спартака» в Сокольниках.</p>
   </div>
 </section>
 
@@ -689,7 +700,7 @@ html{overflow-x:hidden}
       <details><summary>Нужен разряд?</summary><p>Нет. Играют все, кто тренируется. Сборники тоже могут.</p></details>
       <details><summary>Сколько стоит?</summary><p>Бесплатно. Корты «Спартака» в Сокольниках, форма и организация — на нас.</p></details>
       <details><summary>Когда старт?</summary><p>25 января 2027, в День студента.</p></details>
-      <details><summary>Где играем?</summary><p>На кортах «Спартака» в Сокольниках. Встреча двух вузов — 9 матчей по 25 минут: 6 одиночек, мужская пара, женская пара и микст.</p></details>
+      <details><summary>Где играем?</summary><p>На кортах «Спартака» в Сокольниках. Встреча двух вузов: 6 одиночек и 3 пары, каждая игра по 25 минут.</p></details>
       <details><summary>Что такое пробный формат?</summary><p>Быстрая встреча на час: 5 раундов по 10 минут, каждый розыгрыш — очко. Пока он в разработке и его нет: может появиться позже, отдельно от основной лиги, если студенты проголосуют «за».</p></details>
       <details><summary>А если в вузе нет команды?</summary><p>Оставь заявку. Наберутся трое парней и три девушки — вуз в лиге.</p></details>
     </div>
