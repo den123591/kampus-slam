@@ -161,6 +161,8 @@ html{overflow-x:hidden}
 .season.free-grid{grid-template-columns:repeat(3,1fr)}
 #free .lead{margin:16px auto 0;text-align:center}
 @media (max-width:760px){.season.free-grid{grid-template-columns:1fr}}
+.wip{display:inline-block;padding:6px 12px;border-radius:4px;background:var(--ink);color:var(--paper);font:700 14px/1 var(--f-cap);text-transform:uppercase;letter-spacing:.08em;transform:rotate(-2deg)}
+.fmt-band .wip{background:var(--red)}
 .support{display:block;margin-top:14px;padding-top:12px;border-top:2px solid var(--red);color:var(--ink);font-size:.9em}
 .logo-zone{position:relative;padding:clamp(64px,8vw,104px) clamp(10px,3vw,40px)}
 .logo-zone .ball{display:none} /* красные мячи сливались с красным логотипом */
@@ -478,7 +480,7 @@ html{overflow-x:hidden}
     <h2 class="h h--center"><span>Два</span><span class="c blur-in">формата</span></h2>
     <div class="fmt-pick">
       <a class="fp dark dark--or" href="#format"><span class="num">1</span><h3>Основная лига</h3><p>Сезон, плей-офф и кубок. Команда вуза — 3 парня и 3 девушки, встреча — 9 матчей по 25 минут.</p><span class="btn btn--ink">Как устроена</span></a>
-      <a class="fp dark dark--or" href="#probny"><span class="num">2</span><h3>Пробный формат</h3><p>Быстрая встреча на час: 5 раундов по 10 минут, каждый розыгрыш — очко.</p><span class="btn btn--ink">Как играется</span></a>
+      <a class="fp dark dark--or" href="#probny"><span class="num">2</span><span class="wip">В разработке</span><h3>Пробный формат</h3><p>Быстрая встреча на час: 5 раундов по 10 минут. Его пока нет — может появиться позже.</p><span class="btn btn--ink">Как играется</span></a>
     </div>
   </div>
 </section>
@@ -565,7 +567,7 @@ html{overflow-x:hidden}
     <img class="ball" data-k=".01" src="img/myach-3.webp" alt="" style="--s0:130px;--s:calc(var(--s0) * var(--bk,1));--x:calc(100% - 160px * var(--bk,1));--y:calc(100% - 250px * var(--bk,1))">
   </div>
   <div class="wrap">
-    <div class="fmt-band"><span class="spray spray-tag">Формат 2</span><span class="cap">Пробный формат · встреча на час</span></div>
+    <div class="fmt-band"><span class="spray spray-tag">Формат 2</span><span class="cap">Пробный формат · встреча на час</span><span class="wip">В разработке</span></div>
     <div class="cmp-head">
       <div><h2 class="h"><span>Это теннис,</span><span class="c blur-in">но быстрее</span></h2></div>
     </div>
@@ -576,7 +578,7 @@ html{overflow-x:hidden}
       <div class="cmp-row"><span class="cap">Замены</span><b class="o">нельзя</b><b class="n">проиграл — уходишь. Выиграл — ещё один розыгрыш</b></div>
       <div class="cmp-row"><span class="cap">Победа</span><b class="o">больше сетов</b><b class="n">больше очков за 5 раундов</b></div>
     </div>
-    <p class="note">Корт, мяч, линии и две подачи — как обычно. Пробный формат — отдельно от основной лиги: запустим его, если студенты проголосуют «за».</p>
+    <p class="note">Корт, мяч, линии и две подачи — как обычно. Пробный формат пока в разработке: его ещё нет. Может появиться позже, отдельно от основной лиги, если студенты проголосуют «за».</p>
     <span class="strip-cap">Встреча — 5 раундов по 10 минут, очки складываются</span>
     <ol class="strip">
       <li class="dark"><span class="cap">Раунд 1</span><b>Одиночка М</b></li>
@@ -688,7 +690,7 @@ html{overflow-x:hidden}
       <details><summary>Сколько стоит?</summary><p>Бесплатно. Корты «Спартака» в Сокольниках, форма и организация — на нас.</p></details>
       <details><summary>Когда старт?</summary><p>25 января 2027, в День студента.</p></details>
       <details><summary>Где играем?</summary><p>На кортах «Спартака» в Сокольниках. Встреча двух вузов — 9 матчей по 25 минут: 6 одиночек, мужская пара, женская пара и микст.</p></details>
-      <details><summary>Что такое пробный формат?</summary><p>Быстрая встреча на час: 5 раундов по 10 минут, каждый розыгрыш — очко. Это отдельный формат, не часть основной лиги. Сначала стартует основная лига, а пробный формат запустим отдельно, если студенты проголосуют «за».</p></details>
+      <details><summary>Что такое пробный формат?</summary><p>Быстрая встреча на час: 5 раундов по 10 минут, каждый розыгрыш — очко. Пока он в разработке и его нет: может появиться позже, отдельно от основной лиги, если студенты проголосуют «за».</p></details>
       <details><summary>А если в вузе нет команды?</summary><p>Оставь заявку. Наберутся трое парней и три девушки — вуз в лиге.</p></details>
     </div>
   </div>
